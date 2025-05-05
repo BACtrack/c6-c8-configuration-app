@@ -15,6 +15,7 @@
       android:scaleType="centerInside"
       app:srcCompat="@drawable/bactrack_logo"
       />
+
   <TextView
       android:id="@+id/connectionStateTextView"
       android:layout_width="match_parent"
@@ -26,7 +27,6 @@
       android:textAlignment="center"
       android:textColor="@color/BACBlue"
       />
-
 
   <TextView
       android:id="@+id/breathalyzerStateTextView"
@@ -42,7 +42,6 @@
       android:textStyle="bold"
       />
 
-
   <Button
       android:id="@+id/connect_nearest_button_id"
       android:layout_width="match_parent"
@@ -50,34 +49,25 @@
       android:text="Connect Breathalyzer"
       />
 
-
   <Button
-      android:id="@+id/get_battery_level"
+      android:id="@+id/get_units_of_measure_button_id"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Get Battery Level"
+      android:text="Get Units of Measure"
       />
 
   <Button
-      android:id="@+id/get_serial_number_button_id"
+      android:id="@+id/set_units_of_measure_button_id"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Get Serial Number"
+      android:text="Set Permille 2100:1"
       />
 
   <Button
-      android:id="@+id/get_use_count_button_id"
+      android:id="@+id/set_units_of_measure_2_button_id"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Get Use Count"
-      />
-
-  <Button
-      android:id="@+id/start_blow_process_button_id"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Start Test Countdown"
-      />
+      android:text="Set Permille 2000:1" />
 
   <Button
       android:id="@+id/disconnect_button_id"

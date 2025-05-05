@@ -16,5 +16,11 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "BACtrack-Android-SDK-Demo"
+rootProject.name = "C6-C8 Configuration App"
 include ':app'
+
+def sdkDir = new File("../clone/internal-breathalyzer-sdk-android/BreathalyzerSDK")
+logger.lifecycle("sdkDir: ${sdkDir.absolutePath}")
+
+include ':BreathalyzerSDK'
+project(':BreathalyzerSDK').projectDir = sdkDir

@@ -2,39 +2,55 @@ plugins {
   id 'com.android.application'
 }
 
+def localPropsFile = new File("local.properties")
+def localProperties = new Properties()
+if (localPropsFile.exists()) {
+  localPropsFile.withInputStream { stream ->
+    localProperties.load(stream)
+  }
+}
+
 android {
-  namespace 'com.bactrack.bactrack_mobile.android_sdk_demo'
+  namespace 'com.bactrack.bactrack_mobile.android_c6_config'
   compileSdk 34
 
   defaultConfig {
-    applicationId "com.bactrack.bactrack_mobile.android_sdk_demo"
+    applicationId "com.bactrack.bactrack_mobile.android_c6_config"
     minSdk 30
     targetSdk 34
     versionCode 1
     versionName "1.0"
+
+    buildConfigField("String", "BACTRACK_API_KEY", "\"${localProperties.getProperty("bactrack.api.key")}\"")
+
+    missingDimensionStrategy("audience", "public")
 
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
 
   buildTypes {
     release {
-      minifyEnabled false
+      minifyEnabled true
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
+
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
+
+  buildFeatures {
+    buildConfig true
+  }
 }
 
 dependencies {
-  implementation("androidx.appcompat:appcompat:1.6.1")
-  implementation("com.google.android.material:material:1.11.0")
-  implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-  testImplementation 'junit:junit:4.13.2'
-  androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-  androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-  implementation 'com.github.BACtrack:breathalyzer-sdk:2.1.1'
-
+  implementation("androidx.appcompat:appcompat:1.7.0")
+  implementation("com.google.android.material:material:1.12.0")
+  implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+  implementation(project(":BreathalyzerSDK")) {
+    exclude group: 'org.bouncycastle', module: 'bcprov-jdk18on'
+  }
+  implementation "org.bouncycastle:bcprov-jdk15on:1.70"
 }
