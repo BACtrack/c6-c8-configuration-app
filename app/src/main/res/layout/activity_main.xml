@@ -50,24 +50,17 @@
       />
 
   <Button
-      android:id="@+id/get_units_of_measure_button_id"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Get Units of Measure"
-      />
-
-  <Button
       android:id="@+id/set_units_of_measure_button_id"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Set Permille 2100:1"
+      android:text="Set Units of Measure"
       />
 
   <Button
-      android:id="@+id/set_units_of_measure_2_button_id"
+      android:id="@+id/get_units_of_measure_button_id"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Set Permille 2000:1" />
+      android:text="Verify Units of Measure" />
 
   <Button
       android:id="@+id/disconnect_button_id"
@@ -76,5 +69,4 @@
       android:layout_marginBottom="40dp"
       android:text="Disconnect"
       />
-
 </LinearLayout>

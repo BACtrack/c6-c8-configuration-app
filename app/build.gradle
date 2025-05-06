@@ -18,8 +18,8 @@ android {
     applicationId "com.bactrack.bactrack_mobile.android_c6_config"
     minSdk 30
     targetSdk 34
-    versionCode 1
-    versionName "1.0"
+    versionCode 2
+    versionName "2.0"
 
     buildConfigField("String", "BACTRACK_API_KEY", "\"${localProperties.getProperty("bactrack.api.key")}\"")
 
